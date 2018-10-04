@@ -1,0 +1,66 @@
+.navbar{
+    display: flex;
+    height: 60px;
+    padding-left: 14px;
+    padding-right: 14px;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.089);
+}
+
+.navlinks{
+    flex: 2;
+}
+
+button:hover{
+    border-radius: 20px;
+    background-color: rgba(138, 138, 138, 0.226);
+}
+
+button:focus{
+    outline: none;
+}
+
+.navlink{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.534);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    padding: 12px;
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    margin: 0 auto;
+}
+
+.navlink:hover{
+    border-radius: 20px;
+    background-color: rgba(138, 138, 138, 0.226);
+}
+
+img{
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+input{
+    flex: 3;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    background: url('../img/search.png') left no-repeat;
+    background-color: rgba(0, 0, 0, 0.075);
+    background-position-x: 2%;
+    background-size: 3%;
+    padding-left: 4%;
+}
+
+input:focus{
+    outline: none;
+}
+
+.current{
+    color: black;
+}
