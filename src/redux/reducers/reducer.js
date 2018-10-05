@@ -10,11 +10,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch(action.type){
-        case Actions.LOGIN_PENDING:
-        return state
+        case Actions.LOGOUT_SUCCESS:
+        return {...state, login: false}
         case Actions.LOGIN_SUCCESS:
-        console.log('LOG SUCCESS')
-        return {...state, login: true}
+        return {...state, login: true, user: { mail: action.payload.name, password: action.payload.password }}
         default:
         return state
     }

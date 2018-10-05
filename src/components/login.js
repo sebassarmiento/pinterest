@@ -15,7 +15,7 @@ export class login extends Component {
 
     handleChange = e => { this.setState({ [e.target.name]: e.target.value }) }
 
-    handleLogin = () => {this.state.password.length > 0 && this.state.mail.length > 0 ? this.props.loginEvent() : this.setState({loginFail: true}) }
+    handleLogin = () => {this.state.password.length > 0 && this.state.mail.length > 0 ? this.props.loginEvent(this.state.mail, this.state.password) : this.setState({loginFail: true}) }
 
     render() {
         return (
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { loginEvent: (name, password) => dispatch({ type: LOGIN_SUCCESS }) }
+    return { loginEvent: (name, password) => dispatch({ type: LOGIN_SUCCESS, payload: { name, password } }) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(login)

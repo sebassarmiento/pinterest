@@ -64,3 +64,11 @@ input:focus{
 .current{
     color: black;
 }
+
+.username img{
+    position: relative;
+    top: 6px;
+}
+.username{
+    overflow: hidden;
+}
