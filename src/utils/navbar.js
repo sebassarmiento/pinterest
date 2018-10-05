@@ -21,6 +21,8 @@ class NavBar extends Component {
       case '/perfil':
       this.setState({page: {perfil: true}})
       break;
+      default:
+      console.log('Not a path')
     }
   }
 
@@ -28,7 +30,7 @@ class NavBar extends Component {
     return (
       <div className="navbar">
         <img src="https://seeklogo.com/images/P/pinterest-badge-logo-82C89A5E42-seeklogo.com.png" height="28px" alt="Logo" />
-        <input type="text" placeholder="Buscar" />
+        <input type="text" placeholder="Buscar" className="input-navbar" />
         <div className="navlinks">
             <Link to="/" className={this.state.page.inicio ? 'navlink current' : 'navlink'} onClick={(e) => this.currentPage(e)} >Inicio</Link>
             <Link to="/siguiendo" className={this.state.page.siguiendo ? 'navlink current' : 'navlink'} onClick={(e) => this.currentPage(e)} >Siguiendo</Link>

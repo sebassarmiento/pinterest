@@ -8,9 +8,7 @@ const API_URL = 'https://pixabay.com/api/?key=8488791-68b04ec9b6a5522f785e8019b&
 class Home extends Component {
   constructor() {
     super()
-    this.state = {
-      width: window.innerWidth
-    }
+    this.state = {}
   }
 
   componentDidMount() {
@@ -24,23 +22,19 @@ class Home extends Component {
   }
 
   render() {
+    
+    let list = this.state.data ? this.state.data.hits.map(item => {
+      console.log(item)
+      return (<Pin img={item.previewURL} key={Math.random()} alt={item.tags} tags={item.tags} id={item.id} />)
+    }) : null
+
     return (
       <div className="App">
         <h1>Pagina de Inicio</h1>
-
         <div className="container" id="photo-container" >
-          {
-            this.state.data ? this.state.data.hits.map(item => {
-              console.log(item)
-              return (<Pin img={item.previewURL} key={Math.random()} alt={item.tags} tags={item.tags} id={item.id} />)
-            }) : null
-          }
+          {list}
         </div>
-
-        {
-          this.state.data ? console.log(this.state.data) : null
-        }
-
+        {this.state.data ? console.log(this.state.data) : null}
       </div>
     );
   }
